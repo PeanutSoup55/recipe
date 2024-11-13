@@ -1,0 +1,39 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff  ;
+    border: 2px solid rgba(0,0,0,.2);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    backdrop-filter: blur(30px);
+}
+
+.logo img {
+    width: 50px;
+    margin-left: 20px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.nav a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    font-family: 'SUSE';
+    transition: color .15s ease;
+}
+.nav a:hover{
+    color: rgb(76, 148, 243);
+}
+
