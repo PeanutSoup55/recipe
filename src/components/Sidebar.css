@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+.sidebar {
+  font-family: 'SUSE';
+    width: 250px; /* Width of the sidebar */
+    background-color: #ffffff; /* Light gray background */
+    padding: 10px; /* Padding around the content */
+    border-right: 1px solid #ccc; /* Right border for separation */
+    height: 100vh; /* Full height of the viewport */
+    overflow-y: auto; /* Scrollable if content overflows */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 15px; /* Space below the title */
+    font-size: 1.5em; /* Larger font size for the title */
+    color: #000000; /* Dark gray color for the title */
+  }
+  
+  .sidebar ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0px; /* Remove default padding */
+    padding-inline-start: 0px;
+  }
+  
+  .sidebar li {
+    margin: 10px 0; /* Space between each recipe title */
+    padding: 10px; /* Padding around each item */
+    border-radius: 4px; /* Slight rounding of corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+  
+  .sidebar li:hover {
+    background-color: #e2e2e2; /* Change background on hover */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+  
+  .sidebar li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000000; /* Dark gray color for links */
+    font-weight: bold; /* Bold font for better visibility */
+  }
+  
+  .sidebar li a:hover {
+    color: #007bff; /* Change link color on hover */
+  }

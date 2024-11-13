@@ -5,6 +5,7 @@ import './auth.css'
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Nav from '../components/nav';
 
 
 const Auth = () => {
@@ -20,7 +21,7 @@ const Auth = () => {
         event.preventDefault();
         try{
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/Stats', { replace: true }); // redirect to dashboard after successful login
+            navigate('/Main', { replace: true }); // redirect to dashboard after successful login
 
         }catch (err){
             setError(err.message);
@@ -38,6 +39,7 @@ const Auth = () => {
 
     return (
         <div className='idk'>
+            <Nav/>
             <div className='auth'>
                 <div className='body'>
                     <div className='wrapper'>

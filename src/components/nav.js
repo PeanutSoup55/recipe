@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <div className="dash">
         <div className="logo">
-            <img src={Logo} />
+            <img src={Logo} alt='image'/>
         </div>
         <div className="nav">
             <ul>
