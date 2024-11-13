@@ -9,10 +9,9 @@ const Main = () => {
       <Nav />
       <div className="container">
         
-        <div className='sidebar'>
-          <h1>Recipes</h1>
+        
           <Sidebar />
-        </div>
+        
       </div>
 
     </div>
