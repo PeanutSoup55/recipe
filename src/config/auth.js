@@ -21,7 +21,7 @@ const Auth = () => {
         event.preventDefault();
         try{
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/Main', { replace: true }); // redirect to dashboard after successful login
+            navigate('/Sidebar', { replace: true }); // redirect to dashboard after successful login
 
         }catch (err){
             setError(err.message);

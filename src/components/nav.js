@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './nav.css';
 import Logo from'../images/bluelogo.png';
 
+
 const Nav = () => {
   return (
     <div className="dash">
@@ -12,10 +13,9 @@ const Nav = () => {
         </div>
         <div className="nav">
             <ul>
+                <li><Link to={"/New"}>New</Link></li>
+                <li><Link to={"/Sidebar"}>Recipe Book</Link></li>
                 <li><Link to={"/Auth"}>Login</Link></li>
-
-                <li><Link to={"/Main"}>Main</Link></li>
-
             </ul>
         </div>
     </div>

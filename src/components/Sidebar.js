@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../config/firebase';
 import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import './Sidebar.css';
+import Nav from './nav';
 
 const Sidebar = () => {
 
@@ -49,7 +50,9 @@ const Sidebar = () => {
 
 
   return (
-    <div className="container">
+    <div className="uhg">
+      <Nav />
+         <div className="container">
       <div className="sidebar">
         <h2>Recipe List</h2>
         <ul>
@@ -62,31 +65,33 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
-      <div className="main-view">
-        <div className="recipe-details">
-          {selectedRecipe ? (
-            <div>
-              <h2>{selectedRecipe.name}</h2>
-              <h3>Ingredients:</h3>
-              <ul>
-                {selectedRecipe.ingredients.map((ingredients, index) => (
-                  <li key={index}>{ingredients}</li>
-                ))}
-              </ul>
-              <h3>Instructions:</h3>
-              <ol>
-                {selectedRecipe.instructions.map((instruction, index) => (
-                  <li key={index}>{instruction}</li>
-                ))}
-              </ol>
-              
-            </div>
-          ) : (
-            <p>Select a recipe to see the details.</p>
-          )}
-        </div>
+      
+      <div className="recipe-details">
+        {selectedRecipe ? (
+          <div>
+            <h2>{selectedRecipe.name}</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+              {selectedRecipe.ingredients.map((ingredients, index) => (
+                <li key={index}>{ingredients}</li>
+              ))}
+            </ul>
+            <h3>Instructions:</h3>
+            <ol>
+              {selectedRecipe.instructions.map((instruction, index) => (
+                <li key={index}>{instruction}</li>
+              ))}
+            </ol>
+            
+          </div>
+        ) : (
+          <p>Select a recipe to see the details.</p>
+        )}
       </div>
+    
     </div>
+    </div>
+ 
 
   );
 };

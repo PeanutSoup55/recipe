@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from './components/nav';
+import Auth from './config/auth';
 import './App.css';  // Basic styling file
 
 const App = () => {
   return (
     <div className="app">
-      <Nav />
+      <Auth />
     </div>
   )
 };

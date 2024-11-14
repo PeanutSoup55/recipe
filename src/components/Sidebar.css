@@ -3,6 +3,7 @@
 .container {
     display: flex;
     height: 100vh;
+    width: 100%;
     background-color: #f0f0f0;
   }
 
@@ -10,7 +11,7 @@
 /* Sidebar.css */
 .sidebar {
   font-family: 'SUSE';
-    width: 250px; /* Width of the sidebar */
+    width: 19%; /* Width of the sidebar */
     background-color: #ffffff; /* Light gray background */
     padding: 10px; /* Padding around the content */
     border-right: 1px solid #ccc; /* Right border for separation */
@@ -30,6 +31,7 @@
     list-style-type: none; /* Remove default list styles */
     padding: 0px; /* Remove default padding */
     padding-inline-start: 0px;
+    
   }
   
   .sidebar li {
@@ -37,10 +39,21 @@
     padding: 10px; /* Padding around each item */
     border-radius: 4px; /* Slight rounding of corners */
     transition: background-color 0.3s; /* Smooth background color transition */
+    display: flex;
+    align-items: center;
+    background-color: #87CEFA;
+    color: #000000;
+    font-weight: 700;
+  }
+  .sidebar button{
+    background-color: #002d58;
+    margin-left: auto;
+    border-radius: 5px;
+    font-family: 'SUSE';
   }
   
   .sidebar li:hover {
-    background-color: #e2e2e2; /* Change background on hover */
+    background-color: #AFDBE0; /* Change background on hover */
     cursor: pointer; /* Change cursor to pointer */
   }
   
@@ -48,8 +61,46 @@
     text-decoration: none; /* Remove underline from links */
     color: #000000; /* Dark gray color for links */
     font-weight: bold; /* Bold font for better visibility */
+    
   }
   
   .sidebar li a:hover {
     color: #007bff; /* Change link color on hover */
   }
+
+  .recipe-details {
+    font-family: 'SUSE';
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin:20px;
+    width: 100%;
+  }
+  .recipe-details h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  .recipe-details ul{
+    background-color: #87CEFA;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+  }
+  .recipe-details li {
+    margin: 5px;
+    font-weight: 700;
+  }
+
+
+  .recipe-details ol {
+    background-color: #87CEFA;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+  }
+
+
