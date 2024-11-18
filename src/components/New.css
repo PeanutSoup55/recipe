@@ -1,78 +1,114 @@
+
 .new-recipe-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+    background-image: url(../images/bgalysha.png);
+    font-family: 'SUSE';
+    margin-top: 0px;
+  }
 
-h2 {
-    text-align: center;
-    color: #333;
-}
 
-.name-container,
-.instructions-container,
-.ingredients-container {
-    margin-bottom: 15px;
-}
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-}
+  .new-recipe-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 50px;
+    margin-top: 100px;
+    background-color: #fff9ee;
+    border-radius: 10px;
+  }
 
-input[type="text"],
-textarea {
+
+  .name{
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-    margin-right: 30px;
-}
+    margin-bottom: 10px;
 
-input[type="text"]:focus,
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
+  }
+  .name label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  .name input{
+    width: 98%;
+    padding-top: 10px;
+    border-radius: 5px;
+    justify-content: center;
+  }
 
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
+
+  .ingredients button{
+    background-color: #a31f1f;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button[type="button"] {
-    background-color: #dc3545; /* Red for remove button */
-}
-
-button[type="button"]:hover {
-    background-color: #c82333;
-}
-
-.ingredient-input {
-    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 2.5px 5px rgba(0,0,0,.5);
+    backdrop-filter: blur(5px);
+    margin-left: 30px;
+    width: 20%;
+  }
+  .ingredients{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .ingredient{
+    padding-top: 10px;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
+    display: flex;
+  }
+  .ingredient input{
+    width: 70%;
+    padding-top: 10px;
+    border-radius: 5px;
+    justify-content: center;
+  }
+  .ingredients label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
 
-.ingredient-input input {
-    flex: 1;
-    margin-right: 10px;
-}
+
+
+  .instructions button{
+    background-color: #a31f1f;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2.5px 5px rgba(0,0,0,.5);
+    backdrop-filter: blur(5px);
+    margin-left: 30px;
+    width: 20%;
+  }
+  .instructions{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .instruction{
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .instruction input{
+    width: 70%;
+    padding-top: 10px;
+    border-radius: 5px;
+    justify-content: center;
+  }
+
+  .submit{
+    background-color: #366e11;
+    border-radius: 5px;
+    box-shadow: 0 2.5px 5px rgba(0,0,0,.5);
+    backdrop-filter: blur(5px);
+    width: 20%;
+    color: white;
+  }

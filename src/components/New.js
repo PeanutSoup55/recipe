@@ -4,12 +4,15 @@ import Nav from './nav';
 import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { db, auth } from '../config/firebase';
+import { FaTrash } from 'react-icons/fa';
 
 const New = () => {
 
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState(['']);
   const [instructions, setInstructions] = useState(['']);
+  const [error, setError] = useState(null); // State for error handling
+
 
   const handleIngredientChange = (index, value) => {
     const newIngredients = [...ingredients];
@@ -42,25 +45,29 @@ const New = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Create a recipe object
-    const recipe = {
-      
-      ingredients: ingredients,
-      instructions: instructions,
-      name: name,
-    };
+    const user = auth.currentUser ;
 
-    // Save the recipe to Firebase
-    try {
-      // Use addDoc with the collection reference
-      await addDoc(collection(db, 'recipes'), recipe);
-      setName('');
-      setIngredients(['']);
-      setInstructions(['']);
-      console.log('Recipe added successfully');
-    } catch (error) {
-      console.error('Error adding recipe: ', error.message);
-      alert('Error adding recipe: ' + error.message);
+    if (user) {
+    // Create a recipe object
+      const recipe = {
+        ingredients: ingredients,
+        instructions: instructions,
+        name: name,
+        uid: user.uid, 
+      };
+
+      try {
+        await addDoc(collection(db, 'recipes'), recipe);
+        setName('');
+        setIngredients(['']);
+        setInstructions(['']);
+        console.log('Recipe added successfully');
+      } catch (error) {
+        console.error('Error adding recipe: ', error.message);
+        setError('Error adding recipe: ' + error.message); 
+      }
+    } else {
+      setError('User  not signed in.');
     }
   };
 
@@ -84,7 +91,7 @@ const New = () => {
           <div className='ingredients'>
             <label>Ingredients:</label>
             {ingredients.map((ingredient, index) => (
-              <div key={index}>
+              <div key={index} className='ingredient'>
                 <input
                   type="text"
                   value={ingredient}
@@ -92,7 +99,7 @@ const New = () => {
                   required
                 />
                 <button type="button" onClick={() => removeIngredient(index)}>
-                  Remove
+                  <FaTrash />
                 </button>
               </div>
             ))}
@@ -104,7 +111,7 @@ const New = () => {
           <div className='instructions'>
             <label>Instructions:</label>
             {instructions.map((instruction, index) => (
-              <div key={index}>
+              <div key={index} className='instruction'>
                 <input
                   type="text"
                   value={instruction}
@@ -112,7 +119,7 @@ const New = () => {
                   required
                 />
                 <button type="button" onClick={() => removeInstruction(index)}>
-                  Remove
+                <FaTrash />
                 </button>
               </div>
             ))}
@@ -120,7 +127,7 @@ const New = () => {
               Add Instruction
             </button>
           </div>
-          <button type="submit">Submit Recipe</button>
+          <button type="submit" className='submit'>Submit Recipe</button>
         </form>
       </div>
     </div>

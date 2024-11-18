@@ -41,14 +41,17 @@
     transition: background-color 0.3s; /* Smooth background color transition */
     display: flex;
     align-items: center;
-    background-color: #87CEFA;
+    background-image: url(../images/bgalysha.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #000000;
     font-weight: 700;
   }
   .sidebar button{
-    background-color: #002d58;
+
     margin-left: auto;
-    border-radius: 5px;
+    border-radius: 15px;
+    background: transparent;
     font-family: 'SUSE';
   }
   
@@ -64,15 +67,14 @@
     
   }
   
-  .sidebar li a:hover {
-    color: #007bff; /* Change link color on hover */
-  }
-
   .recipe-details {
     font-family: 'SUSE';
     flex: 1;
     padding: 20px;
-    background-color: #ffffff;
+    background-image: url(../images/bgalysha.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin:20px;
@@ -83,7 +85,7 @@
     margin-bottom: 10px;
   }
   .recipe-details ul{
-    background-color: #87CEFA;
+    background-color: #fff9ee;
     padding-left: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -96,7 +98,7 @@
 
 
   .recipe-details ol {
-    background-color: #87CEFA;
+    background-color: #fff9ee;
     padding-left: 40px;
     padding-top: 20px;
     padding-bottom: 20px;

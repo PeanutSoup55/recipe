@@ -31,11 +31,11 @@ const Auth = () => {
     const logout = async () => {
         try {
           await signOut(auth);
-        //  navigate('/', { replace: true }); // redirect to homepage after logout
         } catch (err) {
           console.error(err);
         }
       };
+
 
     return (
         <div className='idk'>

@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebase';
+import { auth, db } from '../config/firebase';
 import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import './Sidebar.css';
 import Nav from './nav';
+import { FaTrash } from 'react-icons/fa';
 
 const Sidebar = () => {
 
 
   //this is sidebar code
+  
   const [recipes, setRecipes] = useState([]);
   const recipeCollection = collection(db, "recipes");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      try {
-        const querySnapshot = await getDocs(recipeCollection);
-        const recipesData = querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data(),}));
-        setRecipes(recipesData);
-      } catch (error) {
-        console.error("Error fetching recipes: ", error);
-      }
+      const user = auth.currentUser;
+      if (user){
+        try {
+          const querySnapshot = await getDocs(recipeCollection);
+          const recipesData = querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+          setRecipes(recipesData);
+        } catch (error) {
+          console.error("Error fetching recipes: ", error);
+        }
+      } else {
+        setError('User  not signed in.');
+    }
+
     };
 
     fetchRecipes();
@@ -59,7 +68,7 @@ const Sidebar = () => {
           {recipes.map(recipe => (
             <li key={recipe.id} onClick={() => handleSelectRecipe(recipe)}>
               {recipe.name}
-              <button onClick={() => handleDelete(recipe.id)}>Delete</button>
+              <button onClick={() => handleDelete(recipe.id)}><FaTrash /></button>
 
             </li>
           ))}
